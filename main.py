@@ -15,6 +15,24 @@ def distancia(p1:PontoEntrega, p2:PontoEntrega) -> float:
 def create_ponto_entrega(id:int, x:float, y:float,/) -> PontoEntrega:
     return PontoEntrega(id=id, x=x,y=y, visited=[])
 
+def mais_proximo(p:PontoEntrega, ori_pontos:list[PontoEntrega]) -> int:
+
+    proximo = 0
+    menor_dis = 99999999999999999
+
+    pontos = [ponto for ponto in ori_pontos if ponto["id"] != p["id"]]
+    pontos = [ponto for ponto in pontos if ponto["id"] not in p["visited"]]
+
+    print(pontos)
+
+    for ponto in pontos:
+        dis = distancia(p,ponto)
+        ponto["visited"].append(p["id"])
+        if dis < menor_dis:
+            proximo = ponto["id"]
+            menor_dis = dis
+
+    return proximo
 def main():
 
 if __name__ == "__main__":
