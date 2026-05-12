@@ -20,10 +20,13 @@ def mais_proximo(p:PontoEntrega, ori_pontos:list[PontoEntrega]) -> int:
     proximo = 0
     menor_dis = 99999999999999999
 
-    pontos = [ponto for ponto in ori_pontos if ponto["id"] != p["id"]]
-    pontos = [ponto for ponto in pontos if ponto["id"] not in p["visited"]]
+    pontos = [
+        ponto for ponto in ori_pontos
+        if ponto["id"] != p["id"]
+        and ponto["id"] not in p["visited"]
+    ]
 
-    print(pontos)
+    #print(pontos)
 
     for ponto in pontos:
         dis = distancia(p,ponto)
