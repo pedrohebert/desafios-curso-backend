@@ -33,7 +33,34 @@ def mais_proximo(p:PontoEntrega, ori_pontos:list[PontoEntrega]) -> int:
             menor_dis = dis
 
     return proximo
+
+
+
 def main():
+    ponto_de_entrega.append(create_ponto_entrega(1,0,0))
+    ponto_de_entrega.append(create_ponto_entrega(2,1,5))
+    ponto_de_entrega.append(create_ponto_entrega(3,5,6))
+    ponto_de_entrega.append(create_ponto_entrega(4,10,10))
+    ponto_de_entrega.append(create_ponto_entrega(5,2,3))
+
+    ordem = []
+    proximo = mais_proximo(create_ponto_entrega(0,0,0), ponto_de_entrega)
+
+    while proximo:
+
+        ordem.append(proximo)
+        proximo = mais_proximo(
+            list([i for i in ponto_de_entrega if i["id"] == ordem[-1]])[-1],
+            ponto_de_entrega
+        )
+
+
+
+
+
+
+
+    print(ordem)
 
 if __name__ == "__main__":
     main()
