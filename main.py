@@ -5,6 +5,7 @@ class PontoEntrega(TypedDict):
     id:int
     x:float
     y:float
+    visited: list[int]
 
 ponto_de_entrega:list[PontoEntrega] = []
 
