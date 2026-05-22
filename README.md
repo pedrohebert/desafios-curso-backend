@@ -35,3 +35,28 @@ A Fórmula da Distância Para calcular o deslocamento entre dois pontos, deve-se
 ```
 d = raiz( (x1 - x2)² + (y1 - y2)² )
 ```
+
+
+## como executar
+
+### clonar o projeto
+
+```bash
+git clone https://github.com/pedrohebert/desafios-curso-backend.git
+cd desafios-curso-backend
+git switch desafio1 
+```
+
+### executando 
+
+#### uv
+
+```bash
+uv run -m app.main
+```
+
+#### python
+
+```bash
+python -m app.main
+```
